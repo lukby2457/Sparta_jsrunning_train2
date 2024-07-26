@@ -60,15 +60,15 @@ console.log(arr.sort((a, b) => a - b));
 
 7.
 var students = [
-      {name:"이재상", age: 25 },
-      {name:"정윤오", age: 30 },
-      {name:"김준현", age: 12312}
+  { name: "이재상", age: 25 },
+  { name: "정윤오", age: 30 },
+  { name: "김준현", age: 123123 }
 ];
 // age를 이용하여 내림차순으로 정렬하고 출력해주세요
 console.log(students.sort((a, b) => b.age - a.age));
 /*
   [
-    { name: '김준현', age: 12312 },
+    { name: '김준현', age: 123123 },
     { name: '정윤오', age: 30 },
     { name: '이재상', age: 25 }
   ]
@@ -76,13 +76,18 @@ console.log(students.sort((a, b) => b.age - a.age));
 
 8.
 var students = [
-      {id : 1, name:"이재상"},
-      {id : 2, name:null},
-      {id : 3, name:"김준현"}
+  { id: 1, name: "이재상" },
+  { id: 2, name: null },
+  { id: 3, name: "김준현" }
 ];
 // 객체 배열에서 name 속성이 null인 객체가 있는지 판별을 확인하는 코드를 작성하고 반환값을 출력해주세요
 var found = arr.findIndex((study) => study.name == null);
 console.log(found === -1 ? false : true);
+
+// 해설
+students.filter((student, index) => student.name !== null);
+students.some((student, index) => student.name === null);
+students.find((student, index) => student.name === null);
 
 9.
 var arr = ["banana", "kiwi", "mango", "strawberry", "lime", "orange", "plum", "cherry"];
